@@ -13,17 +13,17 @@ function Header(){
 
   const clickUser = (e) =>{
     e.preventDefault();
-    
-
   }
 
   const handleChange = (e) => {
     setText(e.nativeEvent.target.value);
+   
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     movePage(`/w/${text}`);
+    setText("");
   }
 
   const handleClick = (e) => {
@@ -46,13 +46,13 @@ function Header(){
 
             <div className={s.searchBarContainer}>
               <form className={s.searchBar} onSubmit={handleSubmit}>
-                  <input type="text" placeholder="Search" onChange= {handleChange}></input>
+                  <input value={text} type="text" placeholder="Search" onChange= {handleChange}></input>
                   <button><FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleClick} /></button>
 
               </form>
                   <button className={s.user} onClick={clickUser}><FontAwesomeIcon icon={faUser}/></button>
                   <div className ={`${s.pop} `}  >
-                     <div>내 정보</div>
+                     <a href='/member/mypage'>내 정보</a>
                      <a href="#">내 문서 기여 목록</a>
                      <a href="/member/login">로그인</a>
                   </div>

@@ -19,7 +19,7 @@ function WikiDocHistory(){
             <div>
                 <div className={s.buttonContainer}>
                     <a href= {'/edit/' + {title}.title} id={s.buttonFirst}> 편집 </a>
-                    <a>토론</a>
+                   
                     <a href ={'/history/'+{title}.title}id={s.buttonLast}>문서 역사</a>
 
                 </div>

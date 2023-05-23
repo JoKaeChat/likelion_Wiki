@@ -1,5 +1,9 @@
 @import "reset.css";
 
+*{
+  box-sizing : border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Kanit', sans-serif;

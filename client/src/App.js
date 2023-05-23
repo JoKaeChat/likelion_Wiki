@@ -6,6 +6,7 @@ import WikiDocHistory from "./pages/history/[docName]";
 import Login from "./pages/member/login";
 import SignUp from "./pages/member/signUp";
 import RecoverPassword from "./pages/member/recover";
+import Mypage from "./pages/member/mypage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
 
         <Route path="/history/:title" element ={<WikiDocHistory/>} ></Route>
 
+        <Route path="member/mypage" element={<Mypage/>}></Route>
         <Route path = "/member/signUp" element ={<SignUp/>} > </Route>
         <Route path = "/member/recover" element ={<RecoverPassword/>} > </Route>
 
