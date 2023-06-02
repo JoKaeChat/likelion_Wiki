@@ -1,0 +1,127 @@
+.header{
+    background-color: #B04E17;
+    height : 2.8rem;
+    position :fixed;
+    top : 0px;
+    right : 0px;
+    width : 100%;
+    z-index : 10;
+}
+
+.headerContainer{
+    max-width : 1250px;
+    display: flex;
+    justify-content: space-between;
+    color : white;
+    font-size : 17px;
+    position : relative;
+    margin : 0 auto;  
+    height : 2.8rem;
+}
+
+.headerListContainer{
+    display: flex;
+    align-items: center;
+}
+
+.headerContainer a{
+    padding-top : 10px; 
+    text-decoration: none ;
+    color : white;
+    font-weight : 700;
+}
+
+.headerContainer ul{
+    list-style: none;
+    display: flex;
+    
+}
+
+.headerContainer li{
+    margin-right : 10px;
+    
+}
+
+
+
+.searchBar{
+    height : 100%;
+
+}
+
+.searchBarContainer{
+    display : flex;
+    padding-right : 30px;
+}
+
+.searchBar input{
+    margin-top: 6px;
+    border : 1px solid #CCCCCC;
+    height : 2rem;
+    border-top-left-radius:  10px;
+    border-bottom-left-radius:  10px;
+}
+.searchBar input::placeholder{
+    padding-left : 10px;
+}
+
+
+.searchBar button{
+    background-color: white;
+    border : 1px solid #CCCCCC;
+    border-left : none;
+    height : 2rem;
+    border-top-right-radius:  10px;
+    border-bottom-right-radius:  10px;
+
+}
+
+.user{
+    background-color: transparent;
+    color : white;
+    border : none;
+    font-size : 20px;       
+    position : relative;
+}
+
+.user:hover{
+    background-color: #08c2af;
+}
+
+.pop{
+    position:absolute;
+    background-color:  white;
+    border : 1px solid #CCCCCC;
+    top : 40px;
+    right : 32px;
+    display : flex;
+    flex-direction: column;
+    text-align: left;
+    
+}
+
+
+.pop a{
+    padding : 10px 15px;
+    font-weight: 300;
+    font-size : 13px;
+    color : black;
+}
+
+.pop div{
+    padding : 10px 15px;
+    font-weight: 300;
+    font-size : 13px;
+    color : black;
+    border-bottom : 1px solid #CCCCCC;
+}
+
+.pop a:last-child{
+    border-top: 1px solid #CCCCCC;
+}
+
+
+
+.hidden{
+    display :none;
+}
