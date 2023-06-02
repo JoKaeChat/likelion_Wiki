@@ -47,6 +47,9 @@ function WikiDocEdit() {
         `http://54.180.147.24:3001/api/edit/${title}`,
         {
           method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify(reqData),
         }
       ).then((response) => {
