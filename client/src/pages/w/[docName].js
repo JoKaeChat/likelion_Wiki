@@ -3,13 +3,12 @@ import s from "../../styles/Wikidoc.module.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function WikiDoc(){
 
-  const [content,setContent] = useState();
-  
+  const [post,setPost] = useState();
   const {title} = useParams();
-  console.log(title);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -20,24 +19,24 @@ function WikiDoc(){
         });
         if (response.ok) {
           const data = await response.json();
-          console.log(data.content)
-          setContent(data.content);
+          setPost(data);
         }
       } catch (error) {
         console.error(error);
       }
     };
+    if(post){
+      console.log(post);
+    }
+
     fetchPost();
   }, [title]);
 
-  // if (!post) {
-  //   return (
-  //     <div>
-  //       <h2>이 문서는 편집할 내용이 없습니다.</h2>
-  //     </div>
-  //   );
-  // }
-  console.log(content);
+  
+  
+  
+
+  
 
     return(
         <MainLayout>
@@ -45,16 +44,18 @@ function WikiDoc(){
 
         <div className={s.header}>
           <div className={s.headerContainer}>
-            <h1 className={s.title}>[문서이름]</h1>
-
+            <h1 className={s.title}>
+              { post&& post[0].title } 
+            </h1>
+            
             <div>
               <div className={s.buttonContainer}>
-                <a href= {'/edit/' + {title}.title} id={s.buttonFirst}> 편집 </a>
-                <a href ={'/history/'+{title}.title}id={s.buttonLast}>문서 역사</a>
+                <Link to= {'/edit/' + {title}.title} id={s.buttonFirst}> 편집 </Link>
+                <Link to ={'/history/'+{title}.title}id={s.buttonLast}>문서 역사</Link>
               </div>
 
               <div className={s.time}>
-                최근 수정 시각
+               {post&& post.created_at}
               </div>
 
             </div>
@@ -62,7 +63,10 @@ function WikiDoc(){
           </div>
         </div>
           
-          <div className={s.body}>[본문]</div>
+          <div className={s.body}>
+           {post&&post[0].body}
+          
+          </div>
 
         </div>  
         </MainLayout>
