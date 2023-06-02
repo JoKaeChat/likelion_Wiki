@@ -17,9 +17,15 @@ function WikiDoc(){
           method: "GET",
           credential:"include"
         });
-        if (response.ok) {
+        if (response) {
+          
           const data = await response.json();
-          setPost(data);
+          console.log(data);
+          if(data[0] === undefined){
+            setPost("db empty");
+            return ;
+          }
+          setPost(data[0]);
         }
       } catch (error) {
         console.error(error);
@@ -31,6 +37,15 @@ function WikiDoc(){
 
     fetchPost();
   }, [title]);
+
+  if (post === "db empty"){
+    return(
+      <div>
+        <a href={`/edit/${title}`}>make doc</a>
+      </div>
+    );
+  };
+
 
   
   
@@ -55,7 +70,7 @@ function WikiDoc(){
               </div>
 
               <div className={s.time}>
-               {post&& post.created_at}
+               {post.created_at}
               </div>
 
             </div>
@@ -64,7 +79,7 @@ function WikiDoc(){
         </div>
           
           <div className={s.body}>
-           {post&&post[0].body}
+           {post.body}
           
           </div>
 

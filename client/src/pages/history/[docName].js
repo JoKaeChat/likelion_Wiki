@@ -18,22 +18,22 @@ function WikiDocHistory(){
             
             <div>
                 <div className={s.buttonContainer}>
-                    <a href= {'/edit/' + {title}.title} id={s.buttonFirst}> 편집 </a>
+                    <a href= {'/edit/' + {title}.title} className={s.buttonFirst}> 편집 </a>
                    
-                    <a href ={'/history/'+{title}.title}id={s.buttonLast}>문서 역사</a>
+                    <a href ={'/history/'+{title}.title} className={s.buttonLast}>문서 역사</a>
 
                 </div>
                 <div className={s.time}>최근 수정 시각</div>
             </div>
           </div>
         </div>
-            
+        <div className={s.body}> 
             <ul className={s.historyList}>
                 <li>[문서 생성 시간][버전 이름] [작성자]<a>보기</a></li>
                 <li>[문서 생성 시간][버전 이름] [작성자]<a>보기</a></li>
                 <li>[문서 생성 시간][버전 이름] [작성자]<a>보기</a></li>
             </ul>
-        
+        </div>
         
         </div>
         </MainLayout>

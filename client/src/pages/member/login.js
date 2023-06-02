@@ -1,5 +1,7 @@
 import s from "../../styles/Wikidoc.module.css";
 import MainLayout from "../../components/mainLayout";
+import {Link} from 'react-router-dom';
+
 
 function Login(){
 
@@ -7,11 +9,12 @@ function Login(){
     <MainLayout>
         <div>
             
-            <div className={`{${s.header} ${s.loginTitle}` }>
-                <div className={`${s.headerContainer}  `}>
-                        <h1 className={`${s.title}`}>로그인</h1>
+            <div className={s.header}>
+                <div className={s.headerContainer}>
+                    <h1 className={s.title}>로그인</h1>
                 </div>
-            </div>      
+            </div>    
+           
                 
             <form className={s.loginBody}>   
                 <div className={s.loginBodyContainer}>
@@ -29,15 +32,17 @@ function Login(){
                         <input type="checkbox" className={s.checkbox}></input>
                         <label for={s.checkbox}>자동 로그인</label>
                     </div>
-                    <a href="/member/recover">[아이디/비밀번호 찾기]</a>
+                    <Link to={"/member/recover"}>[아이디/비밀번호 찾기]</Link>
                 </div>
 
                 <div className={s.loginBtn}>
-                    <a href="/member/signUp">계정 만들기</a>
+                    <Link to={"/member/signUp"}>계정 만들기</Link>
                     <button>로그인</button>
                 </div>
                 </div>
             </form> 
+            
+
         </div>
 
     </MainLayout>
